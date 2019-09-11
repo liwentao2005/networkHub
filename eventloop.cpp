@@ -10,6 +10,7 @@ using namespace didido::net;
 
 
 EventLoop::EventLoop()
+    : quit_(false)
 {
 
 }
@@ -20,7 +21,8 @@ EventLoop::~EventLoop()
 
 void EventLoop::loop()
 {
-    while(true)
+    quit_ = false;
+    while(!quit_)
     {
         std::cout << "poll ever 5s!" << std::endl;
         ::poll(NULL, 0, 5*1000);

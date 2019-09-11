@@ -3,6 +3,7 @@
 #ifndef EVENTLOOP_H
 #define EVENTLOOP_H
 
+#include <atomic>
 #include <iostream>
 #include <functional>
 
@@ -22,6 +23,10 @@ public:
     void loop();
 
     void quit();
+
+private:
+    std::atomic<bool> quit_;
+    std::unique_ptr<Poller> poller_;
 
 };
 
