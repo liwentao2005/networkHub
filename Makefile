@@ -12,6 +12,7 @@ LDFLAGS :=
 
 srcs := $(wildcard ./*.cpp)
 srcs += $(wildcard ./net/test/*.cpp)
+srcs += $(wildcard ./net/*.cpp)
 objs := $(patsubst %.cpp,%.o,$(srcs))
 
 all: main
