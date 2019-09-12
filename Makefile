@@ -6,12 +6,13 @@ CXX := g++
 
 CFLAGS = -Wall -c
 #CXXFLAGS := -std=c++11 -I$(BOOST_ROOT)
-CXXFLAGS := -c -g -std=c++11
+CXXFLAGS := -c -g -std=c++11 -I./net/poller -I./net
 #LDFLAGS := -lboost_thread -lboost_syste
 LDFLAGS :=
 
 srcs := $(wildcard ./*.cpp)
 srcs += $(wildcard ./net/test/*.cpp)
+srcs += $(wildcard ./net/poller/*.cpp)
 srcs += $(wildcard ./net/*.cpp)
 objs := $(patsubst %.cpp,%.o,$(srcs))
 

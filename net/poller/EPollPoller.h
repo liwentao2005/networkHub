@@ -13,6 +13,7 @@ class EPollPoller : public Poller
 public:
     EPollPoller(EventLoop* loop);
     ~EPollPoller() override;
+    int poll(int timeoutMs, int activeChannels) override;
 
 private:
     int epollfd_;

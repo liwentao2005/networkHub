@@ -6,11 +6,14 @@
 #include <atomic>
 #include <iostream>
 #include <functional>
+#include <memory>
 
 namespace didido
 {
 namespace net
 {
+
+class Poller;
 
 class EventLoop
 {
